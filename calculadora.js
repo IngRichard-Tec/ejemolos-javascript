@@ -1,15 +1,31 @@
 // alert("Hola mundo hermoso y maravilloso");
 
-function sumar() {
+function mostrar(e) {
     let numero1 = parseInt(document.getElementById("numero1").value);
     let numero2 = parseInt(document.getElementById("numero2").value);
-
     let resultado = 0;
-    resultado = numero1 + numero2;
+    let operacion = e.target.id;
 
+    if (operacion == "suma") {
+        resultado = numero1 + numero2;
+    }
+    else if (operacion == "resta") {
+        resultado = numero1 - numero2;
+    }
+    else if (operacion == "multiplica") {
+        resultado = numero1 * numero2;
+    }
+    else if (operacion == "divide") {
+        resultado = numero1 / numero2;
+    }
+    else {
+        alert("Funcionalidad en progreso");
+    }
 
-    let objResultado = document.getElementById("resultado");
-    objResultado.innerHTML = resultado;
+    let result = document.getElementById("resultado");
+    result.innerHTML = resultado;
     // // alert(resultado);
-
 }
+
+let butones = document.getElementById("btns");
+butones.addEventListener("click", mostrar);
