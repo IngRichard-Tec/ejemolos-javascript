@@ -33,7 +33,7 @@ const obtenerUsuarios = async (cantidad = 5) => {
 
         let listaUsuarios = [];
 
-        datos.results.forEach(u => {
+        datos.results.forEach((u) => {
             listaUsuarios.push(new Usuario(u.name.first, u.email, u.picture.medium))
         });
 
@@ -45,4 +45,4 @@ const obtenerUsuarios = async (cantidad = 5) => {
 
 //Evento de botón.
 const boton = document.getElementById("btnCargar");
-boton.addEventListener("click", () => obtenerUsuarios(3));
+boton.addEventListener("click", () => obtenerUsuarios(6));
